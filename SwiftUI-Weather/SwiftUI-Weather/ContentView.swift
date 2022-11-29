@@ -46,6 +46,10 @@ struct ContentView: View {
                 Spacer()
             }
         }
+        .onAppear {
+            let button = WeatherButton(title: "Change Day Time", textColor: .blue, backgroundColor: .white)
+            print(type(of: button.body))
+        }
     }
 }
 
@@ -71,7 +75,6 @@ struct WeatherDayView: View {
                     .symbolRenderingMode(.multicolor)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .foregroundStyle(.mint, .orange, .green)
                     .frame(width: 40, height: 40)
                 
                 Text("\(temperature)°")
